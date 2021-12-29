@@ -151,7 +151,7 @@ nav .activeButton {
 #sidebar footer {
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 10em;
     justify-content: space-evenly;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
@@ -246,4 +246,36 @@ h2 span {
 #home button:hover {
     background: #211f1f;
     color: #f2aa4c;
+}
+
+/* MEDIA QUERIES */
+@media(max-width: 1250px) {
+    :root {
+        --sidebar-width: 30vw;
+    }
+
+    #content main {
+        width: 55vw;
+    }
+}
+
+@media(max-width: 1024px) {
+    #sidebar header {
+        width: 35vw;
+        font-size: 2.4vw;
+    }
+
+    #home h2 {
+        font-size: 1.6rem;
+    }
+
+    #home hr {
+        width: 35vw;
+    }
+}
+
+@media(max-width: 850px) {
+    #navContainer span {
+        display: none;
+    }
 }
