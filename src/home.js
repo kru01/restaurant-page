@@ -1,7 +1,9 @@
 import loadMenu from "./menu";
 import { activateButton } from "./sidebar";
 
-export default function loadHome() {
+export { loadHome, makeLogo };
+
+function loadHome() {
     const main = document.querySelector('main');
     main.innerHTML = '';
 
@@ -38,6 +40,14 @@ function makeTitle() {
     const title = document.createElement('h2');
     const lineBreak = document.createElement('br');
     
+    const outerSpan = makeLogo();
+    
+    title.append('WELCOME TO', lineBreak, outerSpan);
+
+    return title;
+}
+
+function makeLogo() {
     const outerSpan = document.createElement('span');
     
     const innerSpan = document.createElement('span');
@@ -45,8 +55,6 @@ function makeTitle() {
     innerSpan.textContent = 'Legit';
     
     outerSpan.append('Totally', innerSpan);
-    
-    title.append('WELCOME TO', lineBreak, outerSpan);
 
-    return title;
+    return outerSpan;
 }
