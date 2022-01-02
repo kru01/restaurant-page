@@ -272,7 +272,7 @@ main #menu {
     align-self: flex-start;
 }
 
-#menu h2 {
+#menu h2, #about h2 {
     font-size: 4.5rem;
     font-weight: bold;
     color: rgb(242 170 76);
@@ -280,7 +280,7 @@ main #menu {
     letter-spacing: 1.3px;
 }
 
-#menu span {
+#menu span, #about span {
     font-family: 'Baguette';
     font-size: 2.2rem;
 }
@@ -304,6 +304,7 @@ main #menu {
     padding: 1.4em;
     height: 24em;
     border-radius: var(--general-boder-rad);
+    transition: background-color 0.2s;
 }
 
 .food img {
@@ -320,14 +321,45 @@ main #menu {
     background: rgb(242 170 76 / 30%);
 }
 
+/* ABOUT */
+#about iframe {
+    border-radius: var(--general-boder-rad);
+}
+
+#about #aboutContent {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    margin-top: 3em;
+}
+
+#aboutText p {
+    text-align: left;
+    font-size: 1.3rem;
+    margin-top: 1em;
+}
+
+#aboutText #time {
+    text-align: center;
+}
+
+#aboutText span {
+    font-size: inherit;
+    font-weight: bold;
+}
+
+#about #credits {
+    margin-top: 3em;
+}
+
+#credits a {
+    color: #f2aa4c;
+}
+
 /* MEDIA QUERIES */
 @media(max-width: 1250px) {
     :root {
         --sidebar-width: 30vw;
-    }
-
-    #content main {
-        width: 55vw;
     }
 }
 
