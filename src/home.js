@@ -1,4 +1,4 @@
-import loadMenu from "./menu";
+import { loadMenu } from "./menu";
 import { activateButton } from "./sidebar";
 
 export { loadHome, makeLogo };

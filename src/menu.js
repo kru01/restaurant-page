@@ -1,6 +1,8 @@
 import { makeLogo } from "./home";
 
-export default function loadMenu() {
+export { loadMenu, makeTitle };
+
+function loadMenu() {
     const main = document.querySelector('main');
     main.innerHTML = '';
 
@@ -11,17 +13,17 @@ function makeMenu() {
     const menu = document.createElement('div');
     menu.id = 'menu';
 
-    menu.append(makeTitle(), makeFoodGrid());
+    menu.append(makeTitle('Menu'), makeFoodGrid());
     
     return menu;
 }
 
-function makeTitle() {
+function makeTitle(section) {
     const title = document.createElement('h2');
     const outerSpan = makeLogo();
     const lineBreak = document.createElement('br');
     
-    title.append(outerSpan, lineBreak, 'Menu');
+    title.append(outerSpan, lineBreak, `${section}`);
 
     return title;
 }
