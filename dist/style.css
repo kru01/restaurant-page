@@ -3,7 +3,10 @@
     src: url(fonts/Baguette.ttf);
 }
 
-html {box-sizing: border-box;}
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
 
 *, *::before, *::after {
     box-sizing: inherit;
@@ -322,6 +325,13 @@ main #menu {
 }
 
 /* ABOUT */
+main #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2.2rem;
+}
+
 #about iframe {
     border-radius: var(--general-boder-rad);
 }
@@ -349,6 +359,7 @@ main #menu {
 }
 
 #about #credits {
+    width: 50vw;
     margin-top: 3em;
 }
 
@@ -365,7 +376,7 @@ main #menu {
 
 @media(max-width: 1024px) {
     #sidebar header {
-        width: 35vw;
+        width: 33vw;
         font-size: 2.4vw;
     }
 
@@ -379,7 +390,135 @@ main #menu {
 }
 
 @media(max-width: 850px) {
+    :root {
+        --sidebar-width: 25vw;
+    }
+
+    #sidebar header {
+        width: 32vw;
+        font-size: 2vw;
+    }
+
     #navContainer span {
         display: none;
+    }
+
+    #navContainer nav {
+        width: 80%;
+    }
+
+    nav .navButtons {
+        width: 120%;
+    }
+
+    main #about {
+        align-self: flex-start;
+        margin: 1.2rem 2.2rem;
+    }
+
+    #about #aboutContent {
+        flex-direction: column;
+        margin-top: 2em;
+    }
+}
+
+@media(max-width: 580px) {
+    :root {
+        --sidebar-height: 11em;
+    }
+
+    body #content {
+        margin-bottom: 4rem;
+    }
+
+    #content #sidebar {
+        flex-direction: column-reverse;
+        justify-content: center;
+        height: var(--sidebar-height);
+        width: 100vw;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        border-right: none;
+        border-bottom: 0.3em solid #b61818;
+    }
+
+    #sidebar header {
+        /* width: 60%;
+        font-size: 4.2vw; */
+        display: none;
+    }
+
+    #sidebar .starBreaks {
+        display: none;
+    }
+
+    #sidebar #navContainer {
+        width: 80vw;
+    }
+
+    #navContainer nav {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    nav .navButtons {
+        width: inherit;
+        padding: 1em 0;
+        text-align: center;
+        box-shadow: inset 0px 0px 5px 5px rgb(0 0 0 / 50%);
+        border-top: 0.3em solid transparent;
+    }
+
+    nav .navButtons:hover {
+        border: none;
+        border-top: 0.3em solid #f2aa4c;
+    }
+
+    nav .activeButton {
+        border: none;
+        border-top: 0.3em solid #f2aa4c;
+    }
+
+    nav #homeButton {
+        border-radius: 0px;
+        border-top-left-radius: var(--general-boder-rad);
+        border-bottom-left-radius: var(--general-boder-rad);
+        box-shadow: inset 3px 0 5px 5px rgb(0 0 0 / 50%);
+    }
+
+    nav #aboutButton {
+        border-radius: 0px;
+        border-top-right-radius: var(--general-boder-rad);
+        border-bottom-right-radius: var(--general-boder-rad);
+        box-shadow: inset -3px 0 5px 5px rgb(0 0 0 / 50%);
+    }
+
+    #content main {
+        align-self: flex-start;
+        margin-left: 0;
+        margin-top: calc(var(--sidebar-height) + 1.5em);
+        width: 90vw;
+        height: unset;
+    }
+
+    main #home {
+        margin: 1.2rem 0.5rem;
+    }
+
+    #home h2 {
+        font-size: 1.3rem;
+    }
+
+    #foodGrid .food {
+        font-size: 3.5vw;
+    }
+
+    .food h3 {
+        font-size: 5vw;
+    }
+
+    #about #credits {
+        width: 75vw;
     }
 }

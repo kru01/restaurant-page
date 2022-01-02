@@ -55,6 +55,8 @@ function makeNavContainer() {
     const nav = document.createElement('nav');
 
     const homeButton = makeNavButton('Home', 'homeButton');
+    homeButton.classList.add('activeButton');
+    
     const menuButton = makeNavButton('Menu');
     const aboutButton = makeNavButton('About', 'aboutButton');
 
